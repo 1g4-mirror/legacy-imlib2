@@ -319,22 +319,22 @@ _DrawGradient(ImlibImage *im, int x, int y, int w, int h,
     if (xx < 0)
     {
         for (i = 0; i < ww; i++)
-            hlut[i] = (-xx * (ww - 1 - i) * len) / divw;
+            hlut[i] = (-xx * (ww - 1 - i) * (uint64_t) len) / divw;
     }
     else
     {
         for (i = 0; i < ww; i++)
-            hlut[i] = (xx * i * len) / divw;
+            hlut[i] = (xx * i * (uint64_t) len) / divw;
     }
     if (yy < 0)
     {
         for (i = 0; i < hh; i++)
-            vlut[i] = (-yy * (hh - 1 - i) * len) / divh;
+            vlut[i] = (-yy * (hh - 1 - i) * (uint64_t) len) / divh;
     }
     else
     {
         for (i = 0; i < hh; i++)
-            vlut[i] = (yy * i * len) / divh;
+            vlut[i] = (yy * i * (uint64_t) len) / divh;
     }
     jump = im->w - w;
 
