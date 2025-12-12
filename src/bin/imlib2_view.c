@@ -696,15 +696,15 @@ main(int argc, char **argv)
             break;
         case 's':              /* Scale output (window size wrt. image size) */
             opt_scale = true;
-            opt_sc_out_y = 0.f;
+            opt_sc_out_y = 0.;
             sscanf(optarg, "%lf,%lf", &opt_sc_out_x, &opt_sc_out_y);
-            if (opt_sc_out_y == 0.f)
+            if (opt_sc_out_y == 0.)
                 opt_sc_out_y = opt_sc_out_x;
             break;
         case 'S':              /* Scale input (input imgage, grab) */
             opt_sc_inp_y = 0.f;
             sscanf(optarg, "%lf,%lf", &opt_sc_inp_x, &opt_sc_inp_y);
-            if (opt_sc_inp_y == 0.f)
+            if (opt_sc_inp_y == 0.)
                 opt_sc_inp_y = opt_sc_inp_x;
             break;
         case 't':

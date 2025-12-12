@@ -184,9 +184,9 @@ __imlib_MapHsvaRange(ImlibRange *rg, int len)
                 bb = p->next->blue;
                 __imlib_rgb_to_hsv(r, g, b, &h1, &s1, &v1);
                 __imlib_rgb_to_hsv(rr, gg, bb, &h2, &s2, &v2);
-                h = ((h1 * k2) + (h2 * k1)) / 65536.0;
-                s = ((s1 * k2) + (s2 * k1)) / 65536.0;
-                v = ((v1 * k2) + (v2 * k1)) / 65536.0;
+                h = ((h1 * k2) + (h2 * k1)) / 65536.f;
+                s = ((s1 * k2) + (s2 * k1)) / 65536.f;
+                v = ((v1 * k2) + (v2 * k1)) / 65536.f;
                 __imlib_hsv_to_rgb(h, s, v, &r, &g, &b);
                 a = (unsigned long int)((p->alpha * k2) +
                                         (p->next->alpha * k1)) >> 16;
@@ -223,9 +223,9 @@ __imlib_MapHsvaRange(ImlibRange *rg, int len)
         aa = ((kk) >> 24) & 0xff;
         __imlib_rgb_to_hsv(r, g, b, &h1, &s1, &v1);
         __imlib_rgb_to_hsv(rr, gg, bb, &h2, &s2, &v2);
-        h = ((h1 * k2) + (h2 * k1)) / 65536.0;
-        s = ((s1 * k2) + (s2 * k1)) / 65536.0;
-        v = ((v1 * k2) + (v2 * k1)) / 65536.0;
+        h = ((h1 * k2) + (h2 * k1)) / 65536.f;
+        s = ((s1 * k2) + (s2 * k1)) / 65536.f;
+        v = ((v1 * k2) + (v2 * k1)) / 65536.f;
         __imlib_hsv_to_rgb(h, s, v, &r, &g, &b);
         a = (unsigned long int)((a * k2) + (aa * k1)) >> 16;
         map[i] = PIXEL_ARGB(a, r, g, b);
